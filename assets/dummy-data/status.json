@@ -1,0 +1,101 @@
+[
+    {
+      "image": "https://example.com/statuses/status1.jpg",
+      "isread": true,
+      "text": "Having a great day!",
+      "backgroundcolor": "#FF5733",
+      "timestamp": "2024-06-05T12:00:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status2.jpg",
+      "isread": false,
+      "text": "Loving the weather.",
+      "backgroundcolor": "#33FF57",
+      "timestamp": "2024-06-05T11:45:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status3.jpg",
+      "isread": true,
+      "text": "New project underway!",
+      "backgroundcolor": "#3357FF",
+      "timestamp": "2024-06-05T11:30:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status4.jpg",
+      "isread": false,
+      "text": "Coffee break time.",
+      "backgroundcolor": "#FF33A1",
+      "timestamp": "2024-06-05T11:15:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status5.jpg",
+      "isread": true,
+      "text": "Check out this view!",
+      "backgroundcolor": "#FFA833",
+      "timestamp": "2024-06-05T11:00:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status6.jpg",
+      "isread": false,
+      "text": "Meeting with the team.",
+      "backgroundcolor": "#33FFA8",
+      "timestamp": "2024-06-05T10:45:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status7.jpg",
+      "isread": true,
+      "text": "Lunch time!",
+      "backgroundcolor": "#A833FF",
+      "timestamp": "2024-06-05T10:30:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status8.jpg",
+      "isread": false,
+      "text": "Workout session completed.",
+      "backgroundcolor": "#FF5733",
+      "timestamp": "2024-06-05T10:15:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status9.jpg",
+      "isread": true,
+      "text": "Back to work.",
+      "backgroundcolor": "#33FF57",
+      "timestamp": "2024-06-05T10:00:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status10.jpg",
+      "isread": false,
+      "text": "Weekend plans?",
+      "backgroundcolor": "#3357FF",
+      "timestamp": "2024-06-05T09:45:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status11.jpg",
+      "isread": true,
+      "text": "Just finished reading a book.",
+      "backgroundcolor": "#FF33A1",
+      "timestamp": "2024-06-05T09:30:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status12.jpg",
+      "isread": false,
+      "text": "Dinner time with family.",
+      "backgroundcolor": "#FFA833",
+      "timestamp": "2024-06-05T09:15:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status13.jpg",
+      "isread": true,
+      "text": "Exploring new places.",
+      "backgroundcolor": "#33FFA8",
+      "timestamp": "2024-06-05T09:00:00Z"
+    },
+    {
+      "image": "https://example.com/statuses/status14.jpg",
+      "isread": false,
+      "text": "Late night thoughts.",
+      "backgroundcolor": "#A833FF",
+      "timestamp": "2024-06-05T08:45:00Z"
+    }
+  ]
+    
