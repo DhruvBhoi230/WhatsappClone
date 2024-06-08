@@ -5,7 +5,7 @@ import 'package:whatsapp_clone/models/person_model.dart';
 Future<List<Person>> parsePersons() async {
   try {
     String jsonData =
-        await rootBundle.loadString('assets/dummy-data/user_data.json');
+        await rootBundle.loadString('assets/dummy-data/person_list_data.json');
     final parsed = jsonDecode(jsonData).cast<Map<String, dynamic>>();
     return parsed.map<Person>((json) => Person.fromJson(json)).toList();
   } catch (e) {

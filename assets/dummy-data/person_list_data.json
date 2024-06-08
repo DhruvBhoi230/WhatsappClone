@@ -1,0 +1,112 @@
+[
+  {
+      "timestamp": "3/3/2024 16:22:09",
+      "name": "चे शर्मा",
+      "fathername": "रं शर्मा",
+      "mother": "न देवी",
+      "height": "5.9",
+      "gender": "पुरुष",
+      "education": "बीकोम",
+      "birthtime": "11:30:00 AM",
+      "dob": "5/22",
+      "birthplace": "",
+      "business": {
+          "business": "",
+          "businesslocation": ""
+      },
+      "familydetails": "एक भाई एक बहन",
+      "contact1": 93527,
+      "contact2": 8976,
+      "gotra": "",
+      "gotra(mother)": "",
+      "email": ""
+  },
+  {
+      "timestamp": "3/3",
+      "name": "Ram",
+      "fathername": "Shayam",
+      "mother": "Radha",
+      "height": "5.9",
+      "gender": "पुरुष",
+      "education": "Ba",
+      "birthtime": "10:00:00 PM",
+      "dob": "3/3",
+      "birthplace": "",
+      "business": {
+          "business": "",
+          "businesslocation": ""
+      },
+      "familydetails": "",
+      "contact1": 85599,
+      "contact2": 89763,
+      "gotra": "Jai",
+      "gotra(mother)": "Hxv",
+      "email": ""
+  },
+  {
+      "timestamp": "3/8/2024 12:32:07",
+      "name": "N sharma",
+      "fathername": "L suthar",
+      "mother": "P sharma",
+      "height": "5.6",
+      "gender": "पुरुष",
+      "education": "PG",
+      "birthtime": "1:01:00 AM",
+      "dob": "3/1",
+      "birthplace": "",
+      "business": {
+          "business": "Teacher",
+          "businesslocation": ""
+      },
+      "familydetails": "Sister & mother",
+      "contact1": 978,
+      "contact2": 897,
+      "gotra": "",
+      "gotra(mother)": "",
+      "email": ""
+  },
+  {
+      "timestamp": "3/11/2024 12:32:55",
+      "name": "A suthar",
+      "fathername": "T ram",
+      "mother": "B bai",
+      "height": "5.5",
+      "gender": "पुरुष",
+      "education": "Civil diploma",
+      "birthtime": "11:50:00 AM",
+      "dob": "12/6/1994",
+      "birthplace": "",
+      "business": {
+          "business": " shop",
+          "businesslocation": " "
+      },
+      "familydetails": "1 brother and 1 sister' ",
+      "contact1": 9785,
+      "contact2": 8976,
+      "gotra": "",
+      "gotra(mother)": "",
+      "email": ""
+  },
+  {
+      "timestamp": "3/16/2024 12:41:33",
+      "name": "I suthar",
+      "fathername": "G lal suthar",
+      "mother": "P devi",
+      "height": "4.4 feet",
+      "gender": "पुरुष",
+      "education": "BCA ",
+      "birthtime": "2:02:00 AM",
+      "dob": "6/3/1990",
+      "birthplace": " ",
+      "business": {
+          "business": "Job ",
+          "businesslocation": ""
+      },
+      "familydetails": "2 sister marrid 1 brother unmarried ",
+      "contact1": 9660,
+      "contact2": 8003,
+      "gotra": " ",
+      "gotra(mother)": " ",
+      "email": ""
+  }
+]
