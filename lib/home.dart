@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/Callswidgets.dart';
 import 'package:whatsapp_clone/Statuswidgets.dart';
-// import 'package:whatsapp_clone/chatswidgets.dart';
 import 'package:whatsapp_clone/SettingsPage.dart';
+import 'package:whatsapp_clone/chatswidgets.dart';
 import 'package:whatsapp_clone/person_list.dart';
 
 class HomePage extends StatelessWidget {
@@ -154,9 +154,9 @@ class HomePage extends StatelessWidget {
                         color: Colors.black,
                       ),
                       //tab2
-                      // Chatswidget(),
+                      Chatswidget(),
                       //tabp3
-                      MatrimonyProfileList(),
+                      // MatrimonyProfileList(),
                       //tab4
                       Statuswidgets(),
                       // Container(
