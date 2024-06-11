@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
               preferredSize: const Size.fromHeight(70),
               child: AppBar(
                 elevation: 0,
-                title: const Text(
+                title: const Text( 
                   'WhatsApp',
                   style: TextStyle(fontSize: 21),
                 ),
@@ -165,7 +165,8 @@ class HomePage extends StatelessWidget {
                       //tab5
                       Callswidgets(),
                       // tab 6
-                      SettingsPage(),
+                      // SettingsPage(),
+                      //tab 7
                     ],
                   ),
                 )
