@@ -7,6 +7,7 @@ import 'package:whatsapp_clone/SettingsPage.dart';
 import 'package:whatsapp_clone/chatswidgets.dart';
 import 'package:whatsapp_clone/person_list.dart';
 
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -99,6 +100,7 @@ class HomePage extends StatelessWidget {
                     tabs: [
                       //tab1
                       Container(
+                        
                         width: 24,
                         child: const Tab(icon: Icon(Icons.camera_alt)),
                       ),
