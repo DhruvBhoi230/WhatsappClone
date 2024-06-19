@@ -11,7 +11,8 @@ class Chatbottombar extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.all(5.0),
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
