@@ -136,7 +136,7 @@ class _Statuswidgets extends State<Statuswidgets> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            "sgfdgsdfg",
+                                            "Ealisa",
                                             style: TextStyle(
                                               fontSize: 17,
                                               fontWeight: FontWeight.bold,
@@ -146,7 +146,7 @@ class _Statuswidgets extends State<Statuswidgets> {
                                             height: 7,
                                           ),
                                           Text(
-                                            "nzfxbfgbgf",
+                                            "10.30",
                                             style: TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold,

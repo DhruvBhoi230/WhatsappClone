@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:whatsapp_clone/Callswidgets.dart';
 import 'package:whatsapp_clone/Statuswidgets.dart';
 import 'package:whatsapp_clone/SettingsPage.dart';
@@ -10,6 +11,7 @@ import 'package:whatsapp_clone/person_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +27,15 @@ class HomePage extends StatelessWidget {
                   'WhatsApp',
                   style: TextStyle(fontSize: 21),
                 ),
+                
                 actions: [
                   const Padding(
                     padding: EdgeInsets.only(top: 12.0, right: 15),
                     child: Icon(
+                    
                       Icons.search,
                       size: 28,
+                      
                       // color: Colors.white,
                     ),
                   ),
