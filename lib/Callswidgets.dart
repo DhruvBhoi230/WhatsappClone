@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Callswidgets extends StatelessWidget {
-  const Callswidgets({super.key});
+  final String searchQuery;
+  const Callswidgets({super.key, required this.searchQuery});
 
   @override
   Widget build(BuildContext context) {

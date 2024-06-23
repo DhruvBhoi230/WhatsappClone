@@ -7,17 +7,36 @@ import 'package:whatsapp_clone/models/user_model.dart';
 import 'package:whatsapp_clone/services/user_chat_service.dart';
 
 class Chatswidget extends StatefulWidget {
+  final String searchQuery;
+  Chatswidget({super.key, required this.searchQuery});
+
   @override
   _ChatswidgetState createState() => _ChatswidgetState();
 }
 
 class _ChatswidgetState extends State<Chatswidget> {
   List<UserModel> _fetchDataFuture = [];
+  TextEditingController _searchController = TextEditingController();
+  List<UserModel> _filteredUsers = [];
 
   @override
   void initState() {
     super.initState();
     _fetchData(); // Call the data fetching method
+
+    _searchController.addListener(() {
+      filterUsers();
+    });
+  }
+
+  void filterUsers() {
+    final query = _searchController.text.toLowerCase();
+    setState(() {
+      _filteredUsers = _fetchDataFuture.where((data) {
+        return (data.username.toLowerCase().contains(query) ||
+            data.lastMessage.toLowerCase().contains(query));
+      }).toList();
+    });
   }
 
   Future<void> _fetchData() async {
@@ -43,11 +62,16 @@ class _ChatswidgetState extends State<Chatswidget> {
               future: fetchUserData(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
+                  final filteredUsers = _fetchDataFuture.where((user) {
+                    return user.username
+                        .toLowerCase()
+                        .contains(widget.searchQuery.toLowerCase());
+                  }).toList();
                   List<UserModel> users = snapshot.data!;
                   return Container(
                     height: 1000, // Set a fixed height
                     child: ListView.builder(
-                        itemCount: users.length,
+                        itemCount: filteredUsers.length,
                         itemBuilder: (context, index) {
                           final user = users[index];
                           return InkWell(

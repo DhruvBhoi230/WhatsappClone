@@ -5,7 +5,8 @@ import 'package:whatsapp_clone/models/status_model.dart';
 import 'package:whatsapp_clone/services/Status.parser.dart';
 
 class Statuswidgets extends StatefulWidget {
-  const Statuswidgets({super.key});
+  final String searchQuery;
+  Statuswidgets({super.key, required this.searchQuery});
 
   @override
   // ignore: library_private_types_in_public_api

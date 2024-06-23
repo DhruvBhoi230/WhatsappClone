@@ -16,9 +16,16 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {  
   bool showSearch = false;
+  String _searchQuery = "";
 
+  void _updateSearchQuery(String query) {
+    setState(() {
+      _searchQuery = query;
+    });
+  }
+            
   void handleSearchIconPress() {
     setState(() {
       showSearch = !showSearch;
@@ -26,8 +33,6 @@ class _HomePageState extends State<HomePage> {
       print('Search Button Pressed');
     });
   }
-
-  TextEditingController searchController = TextEditingController();
 
   Widget _AppAndSearchBar() {
     if (!showSearch) {
@@ -110,7 +115,7 @@ class _HomePageState extends State<HomePage> {
       return AppBar(
         elevation: 0,
         title: TextField(
-          controller: searchController,
+          onChanged: _updateSearchQuery,
           decoration: InputDecoration(
             fillColor: Colors.white,
             hintText: 'Enter to Search...',
@@ -178,7 +183,8 @@ class _HomePageState extends State<HomePage> {
                                 child: const Text(
                                   "8",
                                   style: TextStyle(
-                                      color: Color(0xff075e55), fontSize: 13),
+                                      color: Color.fromARGB(255, 10, 136, 123),
+                                      fontSize: 13),
                                 ),
                               ),
                             ],
@@ -201,25 +207,26 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Flexible(
+                Flexible( 
                   flex: 1,
                   child: TabBarView(
                     children: <Widget>[
                       //tab1
-                      Container(
+                      Container( 
+                       
                         color: Colors.black,
                       ),
                       //tab2
-                      Chatswidget(),
+                      Chatswidget(searchQuery: _searchQuery),
                       //tabp3
                       // MatrimonyProfileList(),
                       //tab4
-                      Statuswidgets(),
+                      Statuswidgets(searchQuery: _searchQuery),
                       // Container(
                       //   color: Colors.blue,
                       // ),
                       //tab5
-                      Callswidgets(),
+                      Callswidgets(searchQuery: _searchQuery),
                       // tab 6
                       // SettingsPage(),
                       //tab 7
