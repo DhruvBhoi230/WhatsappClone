@@ -1,0 +1,22 @@
+[
+    {
+      "id": "1",
+      "callerName": "JohN Doe",
+      "callerNumber": "+1234567890",
+      "callTime": "2024-06-28T14:48:00.000Z",
+      "callDuration": "00:05:00",
+      "callType": "incoming",
+      "isVideoCall": false
+    },
+    {
+      "id": "2",
+      "callerName": "Jane Smith",
+      "callerNumber": "+0987654321",
+      "callTime": "2024-06-28T13:48:00.000Z",
+      "callDuration": "00:02:00",
+      "callType": "outgoing",
+      "isVideoCall": true
+    }
+   
+  ]
+  

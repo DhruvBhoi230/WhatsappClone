@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import
-
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/semantics.dart';
 import 'package:whatsapp_clone/Callswidgets.dart';
 import 'package:whatsapp_clone/Statuswidgets.dart';
 import 'package:whatsapp_clone/SettingsPage.dart';
@@ -16,22 +16,39 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {  
+class _HomePageState extends State<HomePage> {
   bool showSearch = false;
-  String _searchQuery = "";
+  var _searchQuery = "";
+  int _activeTabIndex = 0; // Properly declare and initialize _activeTabIndex
 
-  void _updateSearchQuery(String query) {
+  void _updateSearchQuery(query) {
     setState(() {
       _searchQuery = query;
     });
   }
-            
+
+  void handleTabChange(value) {
+    setState(() {
+      showSearch = false;
+      _activeTabIndex = value;
+    });
+  }
+
   void handleSearchIconPress() {
     setState(() {
       showSearch = !showSearch;
       // ignore: avoid_print
       print('Search Button Pressed');
     });
+  }
+
+  searchLabel() {
+    if (_activeTabIndex == 2) {
+      return 'Search Status';
+    } else if (_activeTabIndex == 3) {
+      return 'Search Call';
+    }
+    return 'Search Chat'; // Fixed typo
   }
 
   Widget _AppAndSearchBar() {
@@ -115,10 +132,11 @@ class _HomePageState extends State<HomePage> {
       return AppBar(
         elevation: 0,
         title: TextField(
+          onTap: () {},
           onChanged: _updateSearchQuery,
           decoration: InputDecoration(
             fillColor: Colors.white,
-            hintText: 'Enter to Search...',
+            hintText: searchLabel(),
             border: InputBorder.none,
           ),
           style: TextStyle(color: Colors.white),
@@ -146,13 +164,15 @@ class _HomePageState extends State<HomePage> {
         length: 6,
         child: Scaffold(
             appBar: PreferredSize(
-                preferredSize: const Size.fromHeight(70),
+                preferredSize:
+                    ui.Size.fromHeight(70.0), // Sets the height of the AppBar
                 child: _AppAndSearchBar()),
             body: Column(
               children: [
                 Container(
                   color: const Color(0xff075e55),
                   child: TabBar(
+                    onTap: handleTabChange,
                     isScrollable: true,
                     indicatorColor: Colors.white,
                     labelStyle: const TextStyle(
@@ -207,13 +227,12 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Flexible( 
+                Flexible(
                   flex: 1,
                   child: TabBarView(
                     children: <Widget>[
                       //tab1
-                      Container( 
-                       
+                      Container(
                         color: Colors.black,
                       ),
                       //tab2

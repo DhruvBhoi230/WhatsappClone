@@ -1,8 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/models/person_model.dart';
 import 'package:whatsapp_clone/models/status_model.dart';
+import 'package:whatsapp_clone/models/user_model.dart';
 import 'package:whatsapp_clone/services/Status.parser.dart';
+import 'package:whatsapp_clone/services/user_chat_service.dart';
 
 class Statuswidgets extends StatefulWidget {
   final String searchQuery;
@@ -15,20 +18,39 @@ class Statuswidgets extends StatefulWidget {
 
 class _Statuswidgets extends State<Statuswidgets> {
   List<StatusModel> _futureStatusData = [];
+ TextEditingController _searchController = TextEditingController();
+ List< StatusModel> _fetchparseStatus = [];
+
 
   @override
   void initState() {
     super.initState();
     _fetchData();
+
+    _searchController.addListener(() {
+      filterUsers();
+    });
   }
 
-  Future<void> _fetchData() async {
+
+ void filterUsers() {
+    final query = _searchController.text.toString();
+    setState(() {
+    _fetchparseStatus = _fetchparseStatus .where((data) {
+        return (data.username.toString().contains(query) ||
+            data.lastMessage.toString().contains(query));
+      }).toList();
+    });
+  }
+   Future<void> _fetchData() async {
     try {
-      List<StatusModel> persons = await parseStatuss();
+      List<StatusModel> data = await  parseStatus(); // Assuming this is a function
       setState(() {
-        _futureStatusData = persons;
+        _fetchparseStatus = data;
+        _fetchparseStatus = data; // Initially, show all users
       });
     } catch (e) {
+      // ignore: avoid_print
       print('Error loading data: $e');
     }
   }
@@ -78,7 +100,9 @@ class _Statuswidgets extends State<Statuswidgets> {
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black54),
-                          )
+                          ),
+                          
+                          
                         ],
                       ),
                     ),
@@ -99,72 +123,128 @@ class _Statuswidgets extends State<Statuswidgets> {
                       color: Colors.black.withOpacity(0.6)),
                 ),
               ),
+              
               Column(children: [
                 FutureBuilder<List<StatusModel>>(
-                    future: parseStatuss(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        List<StatusModel> users = snapshot.data!;
-                        return Container(
-                          height: 1000, // Set a fixed height
-                          child: ListView.builder(
-                              itemCount: users.length,
-                              itemBuilder: (context, index) {
-                                final person = _futureStatusData[index];
-                                return Row(
+              future: parseStatus(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  final filteredUsers = _fetchparseStatus.where((user) {
+                    return user.username
+                        .toLowerCase()
+                        .contains(widget.searchQuery.toLowerCase());
+                  }).toList();
+                  List<StatusModel> users = snapshot.data!;
+                  return Container(
+                    height: 1000, // Set a fixed height
+                    child: ListView.builder(
+                        itemCount: filteredUsers.length,
+                        itemBuilder: (context, index) {
+                          final user = users[index];
+                          return InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, "Statustpage");
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(vertical: 12),
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                      padding: EdgeInsets.all(1.5),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          border: Border.all(
-                                              color: Colors.grey, width: 3)),
-                                      child: ClipRRect(
+                                    Row(
+                                      children: [
+                                        ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(40),
                                           child: Image.asset(
                                             "assets/images/profile ${index + 1}.jpg",
-                                            height: 55,
-                                            width: 55,
+                                            height: 65,
+                                            width: 65,
                                             fit: BoxFit.cover,
-                                          )),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 20),
+                                          child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  user.username,
+                                                  style: TextStyle(
+                                                      fontSize: 19,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                SizedBox(
+                                                  height: 8,
+                                                ),
+                                                Text(
+                                                  user.lastMessage,
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                        ),
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 20),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Ealisa",
-                                            style: TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                    Column(
+                                      children: [
+                                        Text(
+                                          user.timestamp,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              color: Color(0xff0fce5e),
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        SizedBox(
+                                          height: 6,
+                                        ),
+                                        Container(
+                                          alignment: Alignment.center,
+                                          width: 27,
+                                          height: 27,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xff0fce5e),
+                                            borderRadius:
+                                                BorderRadius.circular(18),
                                           ),
-                                          SizedBox(
-                                            height: 7,
-                                          ),
-                                          Text(
-                                            "10.30",
+                                          child: Text(
+                                            user.timestamp,
                                             style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black54),
-                                          )
-                                        ],
-                                      ),
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
-                                );
-                              }),
-                        );
-                      } else {
-                        return Text('Error');
-                      }
-                    })
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                  );
+                } else if (snapshot.hasError) {
+                  return const Center(
+                    child: Text('Error loading data'),
+                  );
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
               ])
             ])));
   }
 }
+
+

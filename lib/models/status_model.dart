@@ -24,4 +24,8 @@ final String timestamp;
       timestamp: jsonData ['timestamp'],
       );
   }
+
+  get username => null;
+
+  get lastMessage => null;
 }
