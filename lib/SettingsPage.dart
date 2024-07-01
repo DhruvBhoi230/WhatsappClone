@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
+
+  void chatListPressed() {
+    print('chat list pressed');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,19 +95,19 @@ class SettingsPage extends StatelessWidget {
                   style: TextStyle(fontSize: 15),
                 ),
               ),
-              ListTile(
-                leading: Padding(
-                  padding: const EdgeInsets.only(top: 7.0),
-                  child: Icon(Icons.message),
-                ),
-                title: Text(
-                  "Chats",
-                  style: TextStyle(fontSize: 17),
-                ),
+              ExpansionTile(
+                title: Text('Chat settings'),
                 subtitle: Text(
                   "Theme,wallpapers,chat history",
                   style: TextStyle(fontSize: 15),
                 ),
+                children: <Widget>[
+                  Column(
+                    children: [
+                      Switch(value: true, onChanged: (bool value) { },)
+                    ],
+                  ),
+                ],
               ),
               ListTile(
                 leading: Padding(
