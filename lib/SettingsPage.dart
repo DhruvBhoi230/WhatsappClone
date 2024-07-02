@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:whatsapp_clone/ThemeChangeNotifier.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -10,6 +11,7 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -104,10 +106,22 @@ class SettingsPage extends StatelessWidget {
                 children: <Widget>[
                   Column(
                     children: [
-                      Switch(value: true, onChanged: (bool value) { },)
+                      Switch(
+                        value: true,
+                        onChanged: (bool value) {},
+                      )
                     ],
                   ),
                 ],
+              ),
+              Switch(
+                value: themeProvider.isDark,
+                onChanged: (value) {
+                  // setState(() {
+                  print('inside switch');
+                    themeProvider.setThemeMode(value);
+                  // });
+                },
               ),
               ListTile(
                 leading: Padding(
@@ -207,4 +221,6 @@ class SettingsPage extends StatelessWidget {
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
 }

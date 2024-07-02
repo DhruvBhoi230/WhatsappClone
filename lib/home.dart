@@ -2,9 +2,11 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
+import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/Callswidgets.dart';
 import 'package:whatsapp_clone/Statuswidgets.dart';
 import 'package:whatsapp_clone/SettingsPage.dart';
+import 'package:whatsapp_clone/ThemeChangeNotifier.dart';
 import 'package:whatsapp_clone/chatswidgets.dart';
 import 'package:whatsapp_clone/person_list.dart';
 
@@ -51,19 +53,22 @@ class _HomePageState extends State<HomePage> {
     return 'Search Chat'; // Fixed typo
   }
 
-  Widget _AppAndSearchBar() {
+  Widget _AppAndSearchBar(context) {
+    var themeProvider = Provider.of<ThemeNotifier>(context);
+
     if (!showSearch) {
       return AppBar(
         elevation: 0,
         title: Text(
           'WhatsApp',
-          style: TextStyle(fontSize: 21),
+          style: Theme.of(context).textTheme.headlineLarge,
         ),
         actions: [
           // const Padding(
           //   padding: EdgeInsets.only(top: 12.0, right: 15),
           //   child:
           // ),
+         
           Padding(
             padding: const EdgeInsets.all(12),
             child: IconButton(
@@ -166,7 +171,7 @@ class _HomePageState extends State<HomePage> {
             appBar: PreferredSize(
                 preferredSize:
                     ui.Size.fromHeight(70.0), // Sets the height of the AppBar
-                child: _AppAndSearchBar()),
+                child: _AppAndSearchBar(context)),
             body: Column(
               children: [
                 Container(

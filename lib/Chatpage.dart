@@ -94,7 +94,7 @@ class Chatpage extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/image/background.png"),
+                image: AssetImage("assets/images/status 5.jpg"),
                 fit: BoxFit.cover)),
         child: SingleChildScrollView(
           child: Column(

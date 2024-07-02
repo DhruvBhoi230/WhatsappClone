@@ -133,6 +133,7 @@ class _ChatswidgetState extends State<Chatswidget> {
                                           user.timestamp,
                                           style: TextStyle(
                                               fontSize: 14,
+                                              
                                               color: Color(0xff0fce5e),
                                               fontWeight: FontWeight.w500),
                                         ),

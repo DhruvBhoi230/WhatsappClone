@@ -1,6 +1,7 @@
 [
     {
       "image": "https://example.com/statuses/status1.jpg",
+      "username" :"Ealisa",
       "isread": "true",
       "text": "Having a great day!",
       "backgroundcolor": "#FF5733",
@@ -8,6 +9,7 @@
     },
     {
       "image": "https://example.com/statuses/status2.jpg",
+      "username" :"Ealisa",
       "isread": "false",
       "text": "Loving the weather.",
       "backgroundcolor": "#33FF57",
@@ -15,6 +17,7 @@
     },
     {
       "image": "https://example.com/statuses/status3.jpg",
+      "username" :"Ealisa",
       "isread": "true",
       "text": "New project underway!",
       "backgroundcolor": "#3357FF",
@@ -22,6 +25,7 @@
     },
     {
       "image": "https://example.com/statuses/status4.jpg",
+      "username" :"Ealisa",
       "isread": "false",
       "text": "Coffee break time.",
       "backgroundcolor": "#FF33A1",
@@ -29,6 +33,7 @@
     },
     {
       "image": "https://example.com/statuses/status5.jpg",
+      "username" :"Ealisa",
       "isread": "true",
       "text": "Check out this view!",
       "backgroundcolor": "#FFA833",
@@ -36,6 +41,7 @@
     },
     {
       "image": "https://example.com/statuses/status6.jpg",
+      "username" :"Ealisa",
       "isread": "false",
       "text": "Meeting with the team.",
       "backgroundcolor": "#33FFA8",
@@ -43,6 +49,8 @@
     },
     {
       "image": "https://example.com/statuses/status7.jpg",
+      "username" :"Ealisa",
+      
       "isread": "true",
       "text": "Lunch time!",
       "backgroundcolor": "#A833FF",
@@ -50,6 +58,7 @@
     },
     {
       "image": "https://example.com/statuses/status8.jpg",
+      "username" :"Ealisa",
       "isread": "false",
       "text": "Workout session completed.",
       "backgroundcolor": "#FF5733",
@@ -57,6 +66,7 @@
     },
     {
       "image": "https://example.com/statuses/status9.jpg",
+      "username" :"Ealisa",
       "isread": "true",
       "text": "Back to work.",
       "backgroundcolor": "#33FF57",
@@ -64,6 +74,7 @@
     },
     {
       "image": "https://example.com/statuses/status10.jpg",
+      "username" :"Ealisa",
       "isread": "false",
       "text": "Weekend plans?",
       "backgroundcolor": "#3357FF",
@@ -71,6 +82,7 @@
     },
     {
       "image": "https://example.com/statuses/status11.jpg",
+      "username" :"Ealisa",
       "isread": "true",
       "text": "Just finished reading a book.",
       "backgroundcolor": "#FF33A1",
@@ -78,6 +90,7 @@
     },
     {
       "image": "https://example.com/statuses/status12.jpg",
+      "username" :"Ealisa",
       "isread": "false",
       "text": "Dinner time with family.",
       "backgroundcolor": "#FFA833",
@@ -85,6 +98,7 @@
     },
     {
       "image": "https://example.com/statuses/status13.jpg",
+      "username" :"Ealisa",
       "isread": "true",
       "text": "Exploring new places.",
       "backgroundcolor": "#33FFA8",
@@ -92,6 +106,7 @@
     },
     {
       "image": "https://example.com/statuses/status14.jpg",
+      "username" :"Ealisa",
       "isread": "false",
       "text": "Late night thoughts.",
       "backgroundcolor": "#A833FF",

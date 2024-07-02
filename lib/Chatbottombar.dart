@@ -17,9 +17,12 @@ class Chatbottombar extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
             ),
+           
             child: Row(
               children: [
+                
                 Icon(
+                
                   Icons.emoji_emotions,
                   color: Colors.black38,
                   size: 30,

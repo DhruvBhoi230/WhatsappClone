@@ -1,5 +1,6 @@
 class StatusModel{
   // static fromjson(json) {}
+  final String username;
 final String image;
 final String isread;
 final String text;
@@ -8,7 +9,10 @@ final String timestamp;
  
 
  StatusModel(
-  {required this.image,
+  
+  {
+  required this.username,
+  required this.image,
   required this.isread,
   required this.text,
   required this.backgroundcolor,
@@ -17,6 +21,7 @@ final String timestamp;
 
   factory StatusModel.fromJson(Map<String, dynamic> jsonData){
     return StatusModel(
+      username: jsonData['username'],
       image: jsonData['image'], 
       isread: jsonData['isread'], 
       text:  jsonData['text'], 
@@ -24,8 +29,4 @@ final String timestamp;
       timestamp: jsonData ['timestamp'],
       );
   }
-
-  get username => null;
-
-  get lastMessage => null;
 }

@@ -37,8 +37,8 @@ class _Statuswidgets extends State<Statuswidgets> {
     final query = _searchController.text.toString();
     setState(() {
     _fetchparseStatus = _fetchparseStatus .where((data) {
-        return (data.username.toString().contains(query) ||
-            data.lastMessage.toString().contains(query));
+        return data.username.toString().contains(query);
+          
       }).toList();
     });
   }
@@ -130,8 +130,7 @@ class _Statuswidgets extends State<Statuswidgets> {
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   final filteredUsers = _fetchparseStatus.where((user) {
-                    return user.username
-                        .toLowerCase()
+                    return user.username.toString().toLowerCase()
                         .contains(widget.searchQuery.toLowerCase());
                   }).toList();
                   List<StatusModel> users = snapshot.data!;
@@ -182,14 +181,14 @@ class _Statuswidgets extends State<Statuswidgets> {
                                                 SizedBox(
                                                   height: 8,
                                                 ),
-                                                Text(
-                                                  user.lastMessage,
-                                                  style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      color: Colors.black),
-                                                ),
+                                                // Text(
+                                                  // user.lastMessage,
+                                                //   style: TextStyle(
+                                                //       fontSize: 16,
+                                                //       fontWeight:
+                                                //           FontWeight.w500,
+                                                //       color: Colors.black),
+                                                // ),
                                               ]),
                                         ),
                                       ],

@@ -3,6 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/models/calls_model.dart';
 import 'package:whatsapp_clone/services/calls.parser.dart';
 
+import 'package:flutter/material.dart';
+
+class CallsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Calls'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Recent Calls',
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+            SizedBox(height: 16.0),
+            // Add calls list here
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 
 class Callswidgets extends StatefulWidget {
@@ -221,7 +247,7 @@ class Callswidgets extends StatefulWidget {
                                     //       ),
                                     //     ),
                                     //   ],
-                                    // ),
+                                    //),
                                   ],
                                 ),
                               ),
