@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors, unused_import
-import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:provider/provider.dart';
@@ -164,6 +164,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var ui;
     return DefaultTabController(
         initialIndex: 1,
         length: 6,

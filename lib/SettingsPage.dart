@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/ThemeChangeNotifier.dart';
 
@@ -106,10 +107,7 @@ class SettingsPage extends StatelessWidget {
                 children: <Widget>[
                   Column(
                     children: [
-                      Switch(
-                        value: true,
-                        onChanged: (bool value) {},
-                      )
+                      
                     ],
                   ),
                 ],
@@ -152,10 +150,14 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
               ListTile(
+                onTap: () {
+                 
+                },
                 leading: Padding(
                   padding: const EdgeInsets.only(top: 7.0),
                   child: Icon(Icons.language),
                 ),
+              
                 title: Text(
                   "App language",
                   style: TextStyle(fontSize: 17),
