@@ -3,9 +3,13 @@ import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/ThemeChangeNotifier.dart';
 
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
 
+class SettingsPage extends StatelessWidget {
+
+ final Function(Locale) onLocaleChange;
+  SettingsPage({required this.onLocaleChange});
+
+  
   void chatListPressed() {
     print('chat list pressed');
   }
@@ -157,7 +161,6 @@ class SettingsPage extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 7.0),
                   child: Icon(Icons.language),
                 ),
-              
                 title: Text(
                   "App language",
                   style: TextStyle(fontSize: 17),

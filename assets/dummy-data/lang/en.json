@@ -1,6 +1,9 @@
 {
-    "hello": "Hello",
-    "welcome": "Welcome"
-  }
+  "title": "Language Settings",
+  "select_language": "Select Language",
+  "english": "English",
+  "spanish": "Spanish"
+}
+
 
  
